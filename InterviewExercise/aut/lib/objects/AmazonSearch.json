@@ -1,0 +1,4 @@
+{
+  "SearchBar": "By.id('twotabsearchtextbox')",
+  "SearchButton" : "By.xpath('/descendant::*[@type='submit'][1]')"
+}
