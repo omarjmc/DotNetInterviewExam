@@ -13,13 +13,15 @@ namespace InterviewExercise.test
 
         public AmazonTest()
         {
-            BaseTest.StartBrowser("https://www.amazon.com/ref=nav_logo");
+            BaseTest.StartBrowser("https://www.amazon.com");
         }
 
         [Fact]
         public void SearchAmazon()
         {
-            amazonFcde.SearchItem("HP printers");
+            amazonFcde.SearchAndSelectItem("Samsung Galaxy S9");
+            amazonFcde.ValidatePriceAndAddToCart();
+            amazonFcde.CreateAmazonAccount();
         }
 
         public void Dispose()

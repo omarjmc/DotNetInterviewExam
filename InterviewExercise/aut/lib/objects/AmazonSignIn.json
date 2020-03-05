@@ -1,0 +1,3 @@
+{
+  "CreateAccount": "By.id('auth-create-account-link')"
+}

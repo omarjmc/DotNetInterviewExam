@@ -1,0 +1,7 @@
+{
+  "Name": "By.name('customerName')",
+  "Email": "By.name('email')",
+  "Password": "By.name('password')",
+  "ReenterPass": "By.name('passwordCheck')",
+  "Banner": "By.xpath('//*[@class='a-spacing-small']')"
+}

@@ -1,0 +1,5 @@
+{
+  "ArticlePrice": "By.id('priceblock_ourprice')",
+  "AddToCart": "By.name('submit.add-to-cart')",
+  "NavYourAmazon": "By.id('nav-your-amazon')"
+}

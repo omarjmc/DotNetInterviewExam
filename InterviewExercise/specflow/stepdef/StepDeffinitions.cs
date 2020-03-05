@@ -21,7 +21,19 @@ namespace InterviewExercise.specflow.stepdef
         [When(@"The user performs a search for (.*)")]
         public void searchItem(string item)
         {
-            amazonFcde.SearchItem(item);
+            amazonFcde.SearchAndSelectItem(item);
+        }
+
+        [Then(@"The user Validates the price and adds product to cart")]
+        public void validatePriceAddToCart()
+        {
+            amazonFcde.ValidatePriceAndAddToCart();
+        }
+
+        [Then(@"The user Creates an Account")]
+        public void createAmazonAccount()
+        {
+            amazonFcde.CreateAmazonAccount();
         }
 
         [Then(@"Close browser")]
