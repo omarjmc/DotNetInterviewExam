@@ -12,6 +12,7 @@ namespace InterviewExercise.aut.pages
 
         public void ClickCreateYourAmazon()
         {
+            new WebDriverWait(DriverFactory.GetWebDriver(), TimeSpan.FromSeconds(20)).Until(drv => drv.FindElement(CreateAccount.GetActualLocator()).Displayed);
             CreateAccount.CreateWebElement().Click();
         }
     }

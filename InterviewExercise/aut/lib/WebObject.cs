@@ -10,9 +10,10 @@ namespace InterviewExercise.aut.lib
     {
         public IWebDriver _driver = DriverFactory.GetWebDriver();
 
-        public string ELEMENT_LOCATOR;
-        public string LOCATOR_USED;
-        public string LOCATOR_METHOD;
+        private string ELEMENT_LOCATOR;
+        private string LOCATOR_USED;
+        private string LOCATOR_METHOD;
+        private By ACTUAL_SELECTOR;
 
         public WebObject(string locator)
         {
@@ -48,39 +49,45 @@ namespace InterviewExercise.aut.lib
 
         private By GetLocator()
         {
-            By actualSelector = null;
+            ACTUAL_SELECTOR = null;
 
             LocatorParser();
 
             switch (LOCATOR_METHOD.ToLower())
             {
-                case "xpath": actualSelector = By.XPath(LOCATOR_USED);
+                case "xpath": ACTUAL_SELECTOR = By.XPath(LOCATOR_USED);
                     break;
                 case "tagname":
-                    actualSelector = By.TagName(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.TagName(LOCATOR_USED);
                     break;
                 case "cssselector":
-                    actualSelector = By.CssSelector(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.CssSelector(LOCATOR_USED);
                     break;
                 case "id":
-                    actualSelector = By.Id(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.Id(LOCATOR_USED);
                     break;
                 case "name":
-                    actualSelector = By.Name(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.Name(LOCATOR_USED);
                     break;
                 case "classname":
-                    actualSelector = By.ClassName(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.ClassName(LOCATOR_USED);
                     break;
                 case "linktext":
-                    actualSelector = By.LinkText(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.LinkText(LOCATOR_USED);
                     break;
                 case "partiallinktext":
-                    actualSelector = By.PartialLinkText(LOCATOR_USED);
+                    ACTUAL_SELECTOR = By.PartialLinkText(LOCATOR_USED);
                     break;
 
             }
 
-            return actualSelector;
+            return ACTUAL_SELECTOR;
+        }
+
+        public By GetActualLocator()
+        {
+            GetLocator();
+            return ACTUAL_SELECTOR;
         }
     }
 }

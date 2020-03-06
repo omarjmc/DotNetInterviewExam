@@ -7,7 +7,7 @@ using System.Text;
 
 namespace InterviewExercise.aut.facades
 {
-    public class AmazonSearchFcde
+    public class AmazonSearchFcde : AmazonSearchInterface
     {
         //Pages
         AmazonSearchPage searchPage = new AmazonSearchPage();

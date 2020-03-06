@@ -1,6 +1,6 @@
 {
   "SearchBar": "By.id('twotabsearchtextbox')",
   "SearchButton": "By.xpath('/descendant::*[@type='submit'][1]')",
-  "SearchResult": "By.xpath('//h2[contains(@class, 'a-size-mini a-spacing-none a-color-base s-line-clamp-2')]')",
+  "SearchResult": "By.xpath('/descendant::a[@class='a-link-normal a-text-normal'][1]/..')",
   "ResultPrice": "By.xpath('/descendant::span[@class='a-price'][1]')"
 }

@@ -1,4 +1,5 @@
 ﻿using InterviewExercise.aut.lib;
+using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -14,16 +15,19 @@ namespace InterviewExercise.aut.pages
 
         public void searchItem(String item)
         {
+            new WebDriverWait(DriverFactory.GetWebDriver(), TimeSpan.FromSeconds(20)).Until(drv => drv.FindElement(SearchBar.GetActualLocator()).Displayed);
             SearchBar.CreateWebElement().SendKeys(item);
         }
 
         public void clickSearch()
         {
+            new WebDriverWait(DriverFactory.GetWebDriver(), TimeSpan.FromSeconds(20)).Until(drv => drv.FindElement(SearchButton.GetActualLocator()).Displayed);
             SearchButton.CreateWebElement().Click();
         }
 
         public void SelectSearchResult()
         {
+            new WebDriverWait(DriverFactory.GetWebDriver(), TimeSpan.FromSeconds(20)).Until(drv => drv.FindElement(SearchResult.GetActualLocator()).Displayed);
             SearchResult.CreateWebElement().Click();
         }
 
